@@ -1,0 +1,35 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+      {
+          "Sid": "VisualEditor0",
+          "Effect": "Allow",
+          "Action": [
+              "route53:ChangeResourceRecordSets",
+              "route53:ListResourceRecordSets"
+          ],
+          "Resource": [
+              "arn:aws:route53:::hostedzone/ZONE1_ID",
+              "arn:aws:route53:::hostedzone/ZONE2_ID",
+              "arn:aws:route53:::hostedzone/ZONE3_ID"
+          ]
+      },
+      {
+          "Sid": "VisualEditor1",
+          "Effect": "Allow",
+          "Action": "route53:GetHostedZone",
+          "Resource": "arn:aws:route53:::hostedzone/*"
+      },
+      {
+          "Sid": "VisualEditor2",
+          "Effect": "Allow",
+          "Action": [
+              "ec2:DescribeTags",
+              "ec2:DescribeVpcs",
+              "route53:ListHostedZones",
+              "ec2:DescribeDhcpOptions"
+          ],
+          "Resource": "*"
+      }
+  ]
+}
